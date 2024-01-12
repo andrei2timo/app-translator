@@ -10,9 +10,7 @@ The Speech Translation App is a Python application that enables users to perform
 - [Prerequisites](#prerequisites)
 - [Setup](#setup)
 - [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-- [Acknowledgments](#acknowledgments)
+
 
 ## Features
 
