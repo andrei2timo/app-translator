@@ -34,4 +34,18 @@ Before running the application, ensure you have the following:
 1. **Clone the repository:**
 
    ```bash
-   git clone [repository-url](https://github.com/andrei2timo/app-translator.git)
+   git clone https://github.com/andrei2timo/app-translator.git
+
+2. **Install the required dependencies:**
+   ```bash
+   pip install -r requirements.txt
+
+3. **Configure Azure Cognitive Services Speech SDK and Azure Text to Speech service:**
+   - Replace <your-speech-sdk-key> and <your-speech-sdk-region> in speech_translator.py with your Speech SDK subscription key and region.
+   - Replace <your-text-to-speech-key> and <your-text-to-speech-region> in text_to_speech.py with your Text to Speech service subscription key and region.
+
+4. **Usage:**
+   ```
+   python gui.py
+
+Follow the on-screen instructions to select the source and target languages, then click the "Translate" button to initiate speech translation. Use the "Pronunciation" button to hear the translated text.
