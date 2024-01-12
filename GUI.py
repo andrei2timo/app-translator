@@ -2,13 +2,27 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter import messagebox
 from speech_translator import recognize_from_microphone
-
+from text_to_speech import pronounce_text  # Import the pronounce_text function
+from PIL import Image,ImageTk
 class MainApp(tk.Tk):
     def __init__(self):
         super().__init__()
         self.title("Speech Translation App")
         self.geometry("1000x250")
 
+        try:
+            # Open the image file
+            bg_image = Image.open("translation.jpg")
+            bg_image = ImageTk.PhotoImage(bg_image)
+
+            # Create a Canvas to display the background image
+            canvas = tk.Canvas(self, width=1000, height=250)
+            canvas.pack()
+
+            # Place the background image on the canvas
+            canvas.create_image(0, 0, anchor=tk.NW, image=bg_image)
+        except Exception as e:
+            print(f"Error loading background image: {e}")
         # Configure Styles
         style = ttk.Style()
         style.configure("TButton", padding=(10, 5), font=('Helvetica', 12))
@@ -36,22 +50,26 @@ class MainApp(tk.Tk):
         self.translated_text_textbox.pack(pady=(0, 10))
 
         # Language Selection Dropdowns
-        self.source_languages = ["en-ES", "ro-RO", "es-ES", "no-NO", "hu-HU", "gd-GB", "fi-FI", "sv-SE", "ru-RU", "zh-CN", "ja-JP"]
-        self.target_languages = ["it", "fr", "es", "ro", "en", "no", "hu", "gd", "fi", "sv", "ru", "zh", "ja"]
+        self.source_languages = ["it-IT", "fr-FR", "es-ES", "ro-RO", "en-US", "no-NO", "fi-FI", "sv-SV", "ru-RU", "zh-ZH", "ja-JA"]
+        self.target_languages = ["it", "fr", "es", "ro", "en", "no", "fi", "sv", "ru", "zh", "ja"]
 
         self.selected_source_language = tk.StringVar()
         self.source_language_dropdown = ttk.Combobox(
-            self, textvariable=self.selected_source_language, values=self.source_languages, style="TCombobox"
+            self, textvariable=self.selected_source_language, values=self.source_languages, style="TCombobox", justify='center',
         )
-        self.source_language_dropdown.set("Select Source Language")
+        self.source_language_dropdown.set("Source Language")
         self.source_language_dropdown.pack(pady=10)
 
         self.selected_target_language = tk.StringVar()
         self.target_language_dropdown = ttk.Combobox(
-            self, textvariable=self.selected_target_language, values=self.target_languages, style="TCombobox"
+            self, textvariable=self.selected_target_language, values=self.target_languages, style="TCombobox", justify='center',
         )
-        self.target_language_dropdown.set("Select Target Language")
+        self.target_language_dropdown.set("Target Language")
         self.target_language_dropdown.pack(pady=10)
+
+        # Pronunciation Button
+        self.pronunciation_button = ttk.Button(self, text="Pronunciation", command=self.read_pronunciation, style="TButton")
+        self.pronunciation_button.pack(pady=(10, 20))
 
         # Start Button
         self.start_button = ttk.Button(self, text="Translate", command=self.translate_from_microphone, style="TButton")
@@ -67,13 +85,16 @@ class MainApp(tk.Tk):
 
         result_text, translated_text = recognize_from_microphone(source_language, target_language)
 
-        print("RESULT:" + result_text, translated_text)
         # Update the text boxes
         self.microphone_input_textbox.delete(1.0, tk.END)
         self.microphone_input_textbox.insert(tk.END, str(result_text))
 
         self.translated_text_textbox.delete(1.0, tk.END)
         self.translated_text_textbox.insert(tk.END, str(translated_text))
+
+    def read_pronunciation(self):
+        text_to_read = self.translated_text_textbox.get(1.0, tk.END).strip()
+        pronounce_text(text_to_read)
 
 if __name__ == "__main__":
     app = MainApp()
