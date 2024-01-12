@@ -3,26 +3,13 @@ from tkinter import ttk
 from tkinter import messagebox
 from speech_translator import recognize_from_microphone
 from text_to_speech import pronounce_text  # Import the pronounce_text function
-from PIL import Image,ImageTk
+
 class MainApp(tk.Tk):
     def __init__(self):
         super().__init__()
         self.title("Speech Translation App")
         self.geometry("1000x250")
-
-        try:
-            # Open the image file
-            bg_image = Image.open("translation.jpg")
-            bg_image = ImageTk.PhotoImage(bg_image)
-
-            # Create a Canvas to display the background image
-            canvas = tk.Canvas(self, width=1000, height=250)
-            canvas.pack()
-
-            # Place the background image on the canvas
-            canvas.create_image(0, 0, anchor=tk.NW, image=bg_image)
-        except Exception as e:
-            print(f"Error loading background image: {e}")
+        
         # Configure Styles
         style = ttk.Style()
         style.configure("TButton", padding=(10, 5), font=('Helvetica', 12))
