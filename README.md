@@ -52,4 +52,4 @@ Follow the on-screen instructions to select the source and target languages, the
 
 5. **Examples:**
    ### Example 1: User Interface
-      ![UI](./images/main-interface.png)
+     ![User Interface](./images/main-interface.png)
