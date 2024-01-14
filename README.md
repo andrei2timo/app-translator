@@ -10,6 +10,7 @@ The Speech Translation App is a Python application that enables users to perform
 - [Prerequisites](#prerequisites)
 - [Setup](#setup)
 - [Usage](#usage)
+- [Examples](#examples)
 
 
 ## Features
@@ -48,3 +49,7 @@ Before running the application, ensure you have the following:
    python gui.py
    
 Follow the on-screen instructions to select the source and target languages, then click the "Translate" button to initiate speech translation. Use the "Pronunciation" button to hear the translated text.
+
+5. **Examples:**
+   ### Example 1: User Interface
+      ![UI](./images/main-interface.png)
