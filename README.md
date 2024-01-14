@@ -2,7 +2,7 @@
 
 The Speech Translation App is a Python application that enables users to perform real-time speech translation using Azure Cognitive Services Speech SDK. The application provides a user-friendly graphical interface for translating spoken language from a microphone input to a target language. Additionally, it includes pronunciation feedback using the Azure Text to Speech service.
 
-**Note:** User authentication is handled by generating a token through Microsoft's authentication process. For more details on the authentication process, please refer to [Microsoft Azure Authentication](https://docs.microsoft.com/en-us/azure/cognitive-services/authentication?tabs=python) and [Generate an Auth Token](https://learn.microsoft.com/en-us/azure/energy-data-services/how-to-generate-auth-token).
+**Note:** **Note:** User authentication is handled by generating a token through Microsoft's authentication process. This authentication token is **crucial** for synchronous usage of multiple Azure services, including speech services, translator, GPT for prompts, etc. Instead of using multiple API Keys for each service, the authentication token streamlines the authentication process, providing a more unified and efficient approach. For more details on the authentication process, please refer to [Microsoft Azure Authentication](https://docs.microsoft.com/en-us/azure/cognitive-services/authentication?tabs=python) and [Generate an Auth Token](https://learn.microsoft.com/en-us/azure/energy-data-services/how-to-generate-auth-token).
 
 ## Table of Contents
 
