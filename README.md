@@ -59,3 +59,7 @@ Follow the on-screen instructions to select the source and target languages, the
    ### Example 2: Application Usage
    ![User Interface](./images/usage.PNG)
 *Caption: The graphical user interface allows users to select source and target languages. In this example, French is chosen as the source language, and English as the target language. The interface displays the spoken text from the microphone in French, translates it into English in real-time, and presents the translated text on the screen.*
+
+   ### Example 3: Pronunciation feature
+   ![User Interface](./images/pronunciation.PNG)
+*Caption: Pronunciation feedback is provided through the Azure Text to Speech service, enhancing the user experience by allowing them to listen to the translated text. After the translation is displayed on the screen, users can click on the "Pronunciation" button to hear the translated text. This feature is designed to assist users in improving their pronunciation and language skills.* See practical example here: https://youtu.be/yu7buGNkVtg
