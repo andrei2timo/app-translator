@@ -55,3 +55,7 @@ Follow the on-screen instructions to select the source and target languages, the
    ![User Interface](./images/main-interface.PNG)
 
    *Caption: The graphical user interface allows users to select source and target languages, providing a seamless experience for speech translation.*
+
+   ### Example 2: Application Usage
+   ![User Interface](./images/usage.PNG)
+*Caption: The graphical user interface allows users to select source and target languages. In this example, French is chosen as the source language, and English as the target language. The interface displays the spoken text from the microphone in French, translates it into English in real-time, and presents the translated text on the screen.*
