@@ -53,3 +53,5 @@ Follow the on-screen instructions to select the source and target languages, the
 ## Examples:
    ### Example 1: User Interface
    ![User Interface](./images/main-interface.PNG)
+
+   *Caption: The graphical user interface allows users to select source and target languages, providing a seamless experience for speech translation.*
