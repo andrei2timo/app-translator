@@ -9,7 +9,7 @@ def authWithBearer():
     resourceID = os.getenv("RESOURCE_ID")
     url = os.getenv('LOGIN_URL')
     
-    payload = f"{'grant_type=client_credentials&client_id='}{os.getenv('clientID')}{'&client_secret='}{os.getenv('secret')}{'&resource=https%3A%2F%2Fcognitiveservices.%azure.com%2F'}"
+    payload = f"{'grant_type=client_credentials&client_id='}{os.getenv('CLIENT_ID')}{'&client_secret='}{os.getenv('CLIENT_SECRET')}{'&resource=https%3A%2F%2Fcognitiveservices.%azure.com%2F'}"
     
     headers = {
         'Content-Type': 'application/x-www-form-urlencoded'
