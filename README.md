@@ -50,6 +50,6 @@ Before running the application, ensure you have the following:
    
 Follow the on-screen instructions to select the source and target languages, then click the "Translate" button to initiate speech translation. Use the "Pronunciation" button to hear the translated text.
 
-5. **Examples:**
+**Examples:**
    ### Example 1: User Interface
      ![User Interface](./images/main-interface.PNG)
